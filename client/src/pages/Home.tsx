@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Plane, TrendingUp, Home as HomeIcon } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
+import { WowGoalCardsCarousel } from "@/components/WowGoalCardsCarousel";
+import { WOW_GOAL_CARDS } from "@/data/wowCards.data";
 
 const GOALS = [
   {
@@ -25,10 +28,15 @@ const GOALS = [
 
 export default function Home() {
   const [currentGoalIndex, setCurrentGoalIndex] = useState(0);
+  const [, setLocation] = useLocation();
   const goal = GOALS[currentGoalIndex];
 
   const nextGoal = () => {
     setCurrentGoalIndex((prev) => (prev + 1) % GOALS.length);
+  };
+
+  const handleGetStarted = () => {
+    setLocation(`/onboarding?goal=${goal.id}`);
   };
 
   return (
@@ -51,7 +59,10 @@ export default function Home() {
           UltraWealth
         </div>
         <div className="flex gap-4 items-center">
-          <Button className="rounded-full px-6 bg-black text-white hover:bg-black/90 border-none font-medium">
+          <Button 
+            onClick={handleGetStarted}
+            className="rounded-full px-6 bg-black text-white hover:bg-black/90 border-none font-medium"
+          >
             Get started
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden text-white hover:bg-white/10">
@@ -111,6 +122,11 @@ export default function Home() {
         </div>
 
       </main>
+      
+      {/* Goal Cards Carousel Section */}
+      <section aria-label="Goal cards" className="relative z-30 bg-[#F9F7F2]">
+        <WowGoalCardsCarousel cards={WOW_GOAL_CARDS} />
+      </section>
     </div>
   );
 }
