@@ -64,7 +64,7 @@ export function WowTransitionGate() {
                 </div>
                 
                 <div className="text-white/50 text-lg font-medium">
-                  Target 2029
+                  Target 2026
                 </div>
               </div>
 
