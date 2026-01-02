@@ -40,21 +40,23 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans overflow-hidden relative bg-sky-500">
+    <div className="min-h-screen flex flex-col font-sans relative bg-[#F9F7F2]">
       
-      {/* Full Screen Hero Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/hero-woman.png" 
-          alt="Confident woman against blue sky" 
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
-      </div>
+      {/* Hero Section */}
+      <div className="relative h-screen min-h-[800px] flex flex-col overflow-hidden">
+        {/* Full Screen Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero-woman.png" 
+            alt="Confident woman against blue sky" 
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
+        </div>
 
-      {/* Navigation */}
-      <nav className="container py-6 flex justify-between items-center z-20 relative">
+        {/* Navigation */}
+        <nav className="container py-6 flex justify-between items-center z-20 relative">
         <div className="font-sans font-bold text-2xl tracking-tight text-white">
           UltraWealth
         </div>
@@ -71,10 +73,10 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="flex-grow flex flex-col relative z-10 container pt-8 pb-8 h-full">
-        
-        {/* Top Headline Area */}
-        <div className="text-center max-w-4xl mx-auto mb-4">
+        <main className="flex-grow flex flex-col relative z-10 container pt-8 pb-8 h-full">
+          
+          {/* Top Headline Area */}
+          <div className="text-center max-w-4xl mx-auto mb-4">
           <h1 className="font-sans font-bold text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white drop-shadow-sm">
             Goals first. Money follows.
           </h1>
@@ -121,7 +123,8 @@ export default function Home() {
           </div>
         </div>
 
-      </main>
+        </main>
+      </div>
       
       {/* Goal Cards Carousel Section */}
       <section aria-label="Goal cards" className="relative z-30 bg-[#F9F7F2]">
