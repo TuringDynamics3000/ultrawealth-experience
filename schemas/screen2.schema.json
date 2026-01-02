@@ -1,1 +1,130 @@
-# screen2.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://turingdynamics3000.github.io/ultrawealth-experience/schemas/screen2.schema.json",
+  "title": "UltraWealth Homepage Screen 2 Contract",
+  "description": "Trust + mechanism bridge. Enforces Organise / Orchestrate / Prove and blocks feature, AI, or performance creep.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": ["sectionTitle", "pillars", "supportingVisual", "primaryCta"],
+
+  "properties": {
+    "sectionTitle": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 64,
+      "description": "Explains mechanism, not marketing. No AI or performance language.",
+      "pattern": "^(?!.*(AI|artificial|return|performance|outperform|optimise|optimize )).*$"
+    },
+
+    "pillars": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Exactly three pillars in fixed order.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "heading", "description"],
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": ["organise", "orchestrate", "prove"]
+          },
+
+          "heading": {
+            "type": "string",
+            "enum": [
+              "Goals, not accounts",
+              "Automatic allocation",
+              "Evidence by default"
+            ]
+          },
+
+          "description": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 160,
+            "pattern": "^(?!.*(AI|return|performance|outperform|recommend|advice|ETF|fund|portfolio|benchmark)).*$",
+            "description": "Single neutral sentence. No products, no hype."
+          }
+        }
+      }
+    },
+
+    "supportingVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "nodes"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "flow"
+        },
+
+        "nodes": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "enum": ["Income", "Goal Accounts", "Portfolio"]
+          }
+        }
+      }
+    },
+
+    "primaryCta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "href"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "const": "Create your first goal"
+        },
+        "href": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+
+  "propertyNames": {
+    "not": {
+      "pattern": "(?i)(balance|net\\s*worth|returns?|performance|benchmark|cash|spendable|profit|gain|alpha|AI|recommend|advice|asset|ETF|fund)"
+    }
+  },
+
+  "examples": [
+    {
+      "sectionTitle": "How money follows goals",
+      "pillars": [
+        {
+          "key": "organise",
+          "heading": "Goals, not accounts",
+          "description": "Structure your money around purpose and timeframes so every dollar has a job."
+        },
+        {
+          "key": "orchestrate",
+          "heading": "Automatic allocation",
+          "description": "Income and contributions flow into goals based on your settings, without constant manual decisions."
+        },
+        {
+          "key": "prove",
+          "heading": "Evidence by default",
+          "description": "Every change is logged with timestamps and rationale so you can see what happened and why."
+        }
+      ],
+      "supportingVisual": {
+        "type": "flow",
+        "nodes": ["Income", "Goal Accounts", "Portfolio"]
+      },
+      "primaryCta": {
+        "label": "Create your first goal",
+        "href": "/start"
+      }
+    }
+  ]
+}
