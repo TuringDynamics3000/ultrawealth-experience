@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Plane, TrendingUp, Home as HomeIcon } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { WowGoalCardsCarousel } from "@/components/WowGoalCardsCarousel";
 import { WOW_GOAL_CARDS } from "@/data/wowCards.data";
@@ -28,8 +28,15 @@ const GOALS = [
 
 export default function Home() {
   const [currentGoalIndex, setCurrentGoalIndex] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
   const [, setLocation] = useLocation();
   const goal = GOALS[currentGoalIndex];
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const nextGoal = () => {
     setCurrentGoalIndex((prev) => (prev + 1) % GOALS.length);
@@ -49,7 +56,8 @@ export default function Home() {
           <img 
             src="/images/hero-woman.png" 
             alt="Confident woman against blue sky" 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center will-change-transform"
+            style={{ transform: `translateY(${scrollY * 0.4}px)` }}
           />
           {/* Gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
