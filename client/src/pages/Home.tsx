@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { WowGoalCardsCarousel } from "@/components/WowGoalCardsCarousel";
 import { WOW_GOAL_CARDS } from "@/data/wowCards.data";
+import { HowItWorksFlow } from "@/components/HowItWorksFlow";
 
 const GOALS = [
   {
@@ -137,6 +138,11 @@ export default function Home() {
       {/* Goal Cards Carousel Section */}
       <section aria-label="Goal cards" className="relative z-30 bg-[#F9F7F2]">
         <WowGoalCardsCarousel cards={WOW_GOAL_CARDS} />
+      </section>
+
+      {/* How It Works Section */}
+      <section aria-label="How UltraWealth works">
+        <HowItWorksFlow />
       </section>
     </div>
   );
