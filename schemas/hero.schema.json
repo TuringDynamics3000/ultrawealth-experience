@@ -1,1 +1,187 @@
-# hero.schema.json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://turingdynamics3000.github.io/ultrawealth-experience/schemas/hero.schema.json",
+  "title": "UltraWealth Homepage Hero Contract",
+  "description": "Compliance-first public hero content contract. Enforces goal-progress semantics and blocks balance/returns leakage.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": ["version", "headline", "subheading", "primaryCta", "heroCard"],
+
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^1\\.0\\.0$",
+      "description": "Contract version. Lock to 1.0.0 until a deliberate breaking change."
+    },
+
+    "headline": {
+      "type": "string",
+      "const": "Goals first. Money follows.",
+      "description": "Locked marketing headline."
+    },
+
+    "subheading": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 160,
+      "description": "One sentence only. No advice, no performance claims, no transactional framing.",
+      "pattern": "^[^.!?]*[.!?]$"
+    },
+
+    "primaryCta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "href"],
+      "properties": {
+        "label": { "type": "string", "const": "Get started" },
+        "href": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Onboarding route. Keep inside this experience layer (no product deep links here by default)."
+        }
+      }
+    },
+
+    "heroCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topLabel", "metric", "secondaryCta"],
+      "properties": {
+        "topLabel": { "type": "string", "const": "Primary Goal" },
+
+        "metric": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["progressPercent", "status"],
+          "properties": {
+            "goalName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 48,
+              "description": "Optional short label for the goal (e.g., Home Deposit)."
+            },
+
+            "progressPercent": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Integer only. No decimals."
+            },
+
+            "status": {
+              "type": "string",
+              "enum": ["On track", "Ahead", "Behind"],
+              "description": "Directional status only. No performance framing."
+            },
+
+            "targetYear": {
+              "type": "integer",
+              "minimum": 2025,
+              "maximum": 2100,
+              "description": "Optional year-only anchor (YYYY). No dates."
+            }
+          }
+        },
+
+        "secondaryCta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label", "href"],
+          "properties": {
+            "label": { "type": "string", "const": "View goals" },
+            "href": { "type": "string", "minLength": 1 }
+          }
+        },
+
+        "eventCard": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "subtitle", "timestamp"],
+          "properties": {
+            "title": {
+              "type": "string",
+              "enum": [
+                "Income allocated",
+                "Allocation completed",
+                "Contribution recorded",
+                "Automatic rebalance completed",
+                "Risk profile unchanged"
+              ],
+              "description": "Neutral, past tense. No transactional feed language."
+            },
+
+            "subtitle": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "description": "Short cause→effect descriptor (e.g., Across 4 goals). No hype."
+            },
+
+            "timestamp": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 32,
+              "description": "Neutral timestamp label e.g. 'Today, 11:28'. Not an ISO requirement for marketing."
+            },
+
+            "contributionCents": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500000000,
+              "description": "Only allowed for Contribution-record events. Represents a single contribution amount, not a balance."
+            }
+          },
+
+          "allOf": [
+            {
+              "if": {
+                "properties": { "title": { "const": "Contribution recorded" } },
+                "required": ["title"]
+              },
+              "then": { "required": ["contributionCents"] },
+              "else": {
+                "not": { "required": ["contributionCents"] }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "propertyNames": {
+    "not": {
+      "pattern": "(?i)(balance|net\\s*worth|netWorth|portfolioValue|returns?|performance|benchmark|cash|spendable|profit|gain|pnl|yield|alpha|outperform)"
+    }
+  },
+
+  "allOf": [
+    {
+      "not": {
+        "anyOf": [
+          { "required": ["portfolioValue"] },
+          { "required": ["netWorth"] },
+          { "required": ["balance"] },
+          { "required": ["returns"] },
+          { "required": ["performance"] }
+        ]
+      }
+    }
+  ],
+
+  "examples": [
+    {
+      "version": "1.0.0",
+      "headline": "Goals first. Money follows.",
+      "subheading": "Build the future you want with goals that keep every dollar purposeful.",
+      "primaryCta": { "label": "Get started", "href": "/start" },
+      "heroCard": {
+        "topLabel": "Primary Goal",
+        "metric": { "goalName": "Home Deposit", "progressPercent": 68, "status": "On track", "targetYear": 2029 },
+        "secondaryCta": { "label": "View goals", "href": "/goals" },
+        "eventCard": { "title": "Income allocated", "subtitle": "Across 4 goals", "timestamp": "Today, 11:28" }
+      }
+    }
+  ]
+}
