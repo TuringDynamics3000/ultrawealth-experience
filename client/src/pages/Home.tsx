@@ -1,7 +1,36 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Plane, TrendingUp, Home as HomeIcon } from "lucide-react";
+import { useState } from "react";
+
+const GOALS = [
+  {
+    id: "home",
+    label: "Home Deposit",
+    amount: "$81,600",
+    notification: { label: "Contribution", amount: "+$5,100", icon: HomeIcon }
+  },
+  {
+    id: "travel",
+    label: "Europe Trip",
+    amount: "$12,450",
+    notification: { label: "Flight Savings", amount: "+$850", icon: Plane }
+  },
+  {
+    id: "invest",
+    label: "Retirement",
+    amount: "$142,800",
+    notification: { label: "Dividend", amount: "+$1,240", icon: TrendingUp }
+  }
+];
 
 export default function Home() {
+  const [currentGoalIndex, setCurrentGoalIndex] = useState(0);
+  const goal = GOALS[currentGoalIndex];
+
+  const nextGoal = () => {
+    setCurrentGoalIndex((prev) => (prev + 1) % GOALS.length);
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-sans overflow-hidden relative bg-sky-500">
       
@@ -51,25 +80,28 @@ export default function Home() {
             {/* Center UI Group - Positioned absolutely to sit over torso */}
             <div className="absolute top-1/2 left-0 right-0 flex flex-col items-center gap-4 transform translate-y-4">
               {/* Big Number */}
-              <div className="text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md">
-                $81,600
+              <div key={goal.amount} className="text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md animate-in fade-in zoom-in-95 duration-300">
+                {goal.amount}
               </div>
               
               {/* Pill Button */}
-              <div className="bg-white text-black px-6 py-3 rounded-full font-semibold text-sm shadow-lg cursor-pointer hover:scale-105 transition-transform">
-                Home Deposit
-              </div>
+              <button 
+                onClick={nextGoal}
+                className="bg-white text-black px-6 py-3 rounded-full font-semibold text-sm shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all select-none"
+              >
+                {goal.label}
+              </button>
             </div>
 
             {/* Bottom Notification Card */}
-            <div className="w-[90%] bg-white rounded-2xl p-4 flex items-center gap-4 shadow-xl animate-in slide-in-from-bottom-8 duration-700 delay-300">
+            <div key={goal.id} className="w-[90%] bg-white rounded-2xl p-4 flex items-center gap-4 shadow-xl animate-in slide-in-from-bottom-4 fade-in duration-500">
               <div className="h-10 w-10 rounded-full bg-[#6F6A63] flex items-center justify-center text-white shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <goal.notification.icon className="h-5 w-5" />
               </div>
               <div className="flex-grow">
                 <div className="flex justify-between items-baseline">
-                  <h3 className="font-bold text-[#6F6A63] text-sm">Contribution</h3>
-                  <span className="text-[#6F6A63] font-bold text-sm">+$5,100</span>
+                  <h3 className="font-bold text-[#6F6A63] text-sm">{goal.notification.label}</h3>
+                  <span className="text-[#6F6A63] font-bold text-sm">{goal.notification.amount}</span>
                 </div>
                 <p className="text-xs text-[#6F6A63]/60">Today, 11:28</p>
               </div>
