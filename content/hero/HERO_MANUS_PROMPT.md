@@ -1,0 +1,1 @@
+# HERO_MANUS_PROMPT.md

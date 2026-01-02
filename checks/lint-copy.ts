@@ -1,0 +1,1 @@
+# lint-copy.ts

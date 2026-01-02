@@ -1,0 +1,1 @@
+# lint-data.ts

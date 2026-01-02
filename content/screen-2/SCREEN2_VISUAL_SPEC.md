@@ -1,0 +1,1 @@
+# SCREEN2_VISUAL_SPEC.md
