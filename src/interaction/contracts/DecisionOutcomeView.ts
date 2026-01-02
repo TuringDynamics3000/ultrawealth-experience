@@ -1,6 +1,6 @@
-export interface DecisionOutcomeView {
+﻿export interface DecisionOutcomeView {
   decision_id: string;
-  decision_state: 'STATE_2' | 'STATE_3' | 'STATE_4' | 'STATE_5';
+  decision_state: 'STATE_6' | 'STATE_6' | 'STATE_6' | 'STATE_6';
   automation_level: 'HUMAN' | 'ASSISTED' | 'AUTONOMOUS';
   outcome: 'APPROVED' | 'BLOCKED' | 'ESCALATED' | 'PENDING';
   human_message: string;
