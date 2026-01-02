@@ -1,15 +1,16 @@
-import { InteractionSession } from '../contracts/InteractionSession';
-import { post } from '../api/client';
+import { DefaultApi, Configuration } from '@/generated/turingos';
 
-export async function createSession(
-  actor_type: InteractionSession['actor_type'],
-  actor_id: string,
-  channel: InteractionSession['channel']
-): Promise<InteractionSession> {
-  return post<InteractionSession>('/interaction/sessions', {
+const api = new DefaultApi(
+  new Configuration({
+    basePath: process.env.NEXT_PUBLIC_TURINGOS_API ?? 'http://localhost:3000',
+  })
+);
+
+export async function createInteractionSession(actorId: string) {
+  return api.interactionSessionsPost({
     tenant_id: 'ultrawealth',
-    actor_type,
-    actor_id,
-    channel,
+    actor_type: 'CLIENT',
+    actor_id: actorId,
+    channel: 'WEB',
   });
 }
