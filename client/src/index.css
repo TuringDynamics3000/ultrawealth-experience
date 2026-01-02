@@ -48,48 +48,42 @@
 }
 
 :root {
-  /* Neo-Humanist FinTech Palette */
-  /* Primary: Oxidised Bronze #6F6A63 -> OKLCH(0.48 0.01 80) approx */
-  /* Background: Soft Cream #F9F7F2 -> OKLCH(0.97 0.01 85) approx */
-  /* Accent: Muted Terracotta #C88D74 -> OKLCH(0.65 0.1 50) approx */
+  /* Immersive Realism Palette */
+  /* Background is handled by the image, but default to a deep sky blue */
+  --background: oklch(0.6 0.15 250); /* Deep Sky Blue fallback */
+  --foreground: oklch(1 0 0); /* White text for contrast against image */
   
-  --background: oklch(0.97 0.01 85); /* #F9F7F2 Soft Cream */
-  --foreground: oklch(0.48 0.01 80); /* #6F6A63 Oxidised Bronze */
-  
-  --card: oklch(1 0 0); /* White for cards to pop against cream bg */
-  --card-foreground: oklch(0.48 0.01 80);
+  /* Cards are white with dark text */
+  --card: oklch(1 0 0); 
+  --card-foreground: oklch(0.48 0.01 80); /* #6F6A63 Oxidised Bronze for text inside cards */
   
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.48 0.01 80);
   
-  /* Primary is used for text/borders, NOT button fills usually in this style, but if needed for active states */
-  --primary: oklch(0.48 0.01 80); 
-  --primary-foreground: oklch(0.98 0 0);
+  /* Primary buttons are white or dark depending on context */
+  --primary: oklch(1 0 0); 
+  --primary-foreground: oklch(0.2 0.01 250); /* Dark text on white buttons */
   
-  --secondary: oklch(0.95 0.01 85);
-  --secondary-foreground: oklch(0.48 0.01 80);
+  --secondary: oklch(1 0 0 / 0.2); /* Glass effect */
+  --secondary-foreground: oklch(1 0 0);
   
-  --muted: oklch(0.92 0.01 85);
-  --muted-foreground: oklch(0.6 0.01 80);
+  --muted: oklch(1 0 0 / 0.6);
+  --muted-foreground: oklch(1 0 0 / 0.8);
   
-  --accent: oklch(0.95 0.02 85);
-  --accent-foreground: oklch(0.48 0.01 80);
+  --accent: oklch(1 0 0);
+  --accent-foreground: oklch(0.2 0.01 250);
   
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   
-  --border: oklch(0.9 0.01 85);
-  --input: oklch(0.9 0.01 85);
-  --ring: oklch(0.48 0.01 80); /* Focus ring matches primary */
+  --border: oklch(1 0 0 / 0.2);
+  --input: oklch(1 0 0 / 0.2);
+  --ring: oklch(1 0 0);
   
-  --radius: 1rem; /* Softer, larger radius */
+  --radius: 1.5rem; /* Very rounded, pill-like */
   
-  /* Chart colors for the goal card progress */
-  --chart-1: oklch(0.65 0.1 50); /* #C88D74 Muted Terracotta */
-  --chart-2: oklch(0.6 0.1 150);
-  --chart-3: oklch(0.5 0.1 200);
-  --chart-4: oklch(0.4 0.1 250);
-  --chart-5: oklch(0.3 0.1 300);
+  /* Chart colors */
+  --chart-1: oklch(0.5 0.2 260); /* Vibrant Blue for progress */
 }
 
 .dark {
