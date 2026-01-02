@@ -1,0 +1,38 @@
+name: Public Experience Guardrails
+
+on:
+  pull_request:
+    paths:
+      - "schemas/**"
+      - "content/**"
+      - "governance/**"
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install tooling
+        run: |
+          npm install -g ajv-cli grep-cli
+
+      - name: Validate hero schema
+        run: |
+          ajv validate -s schemas/hero.schema.json -d schemas/hero.schema.json
+
+      - name: Validate screen 2 schema
+        run: |
+          ajv validate -s schemas/screen2.schema.json -d schemas/screen2.schema.json
+
+      - name: Enforce forbidden language
+        run: |
+          set -e
+          FORBIDDEN="balance|net worth|returns?|performance|benchmark|outperform|profit|gain|AI|advice|recommend|ETF|fund"
+          if grep -RInE "$FORBIDDEN" content governance; then
+            echo "❌ Forbidden language detected in public experience layer"
+            exit 1
+          fi
+          echo "✅ No forbidden language detected"
