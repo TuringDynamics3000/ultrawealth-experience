@@ -1,0 +1,56 @@
+Transition Gate Anchor Card v3 - Visual Verification
+====================================================
+
+Date: 2026-01-02
+Branch: feat/how-it-works
+
+EXACT VISUAL SPEC COMPLIANCE:
+-----------------------------
+
+CARD GEOMETRY:
+✅ Width: ~520px (within 480-560px spec)
+✅ Aspect ratio: portrait (3:4)
+✅ Border radius: large (32px - matches carousel cards)
+✅ Elevation: subtle shadow (shadow-xl)
+✅ Centered, dominant visual object in section
+
+BACKGROUND TREATMENT (Soft System Motif):
+✅ Light layered planes with depth cue
+✅ Warm neutral gradient (f8f7f4 → f0ede6 → e8e4db)
+✅ Nested white rectangles creating depth
+✅ No diagrams, no technical symbols
+✅ "System context" feeling achieved
+✅ Feels like continuation of carousel, not new component family
+
+CARD CONTENT (Minimal & Symbolic):
+✅ Top micro-label: "PRIMARY GOAL" (small, muted, not interactive)
+✅ Primary signal: "On track" (ONE ONLY - symbolic status, not data)
+✅ Sub-signal: "Updated moments ago" (hints at liveness, not mechanics)
+✅ NO numbers, percentages, or balances
+
+INTERACTION:
+✅ Card is NON-INTERACTIVE (aria-hidden="true")
+✅ No hover states
+✅ No click handlers on card
+✅ Visual promise, not a control
+
+DECISION LAYER (CTA):
+✅ Heading: "Now see it work" (short, calm, decisive)
+✅ Supporting line: "A short walkthrough, then the underlying artifacts."
+✅ Primary CTA: "See the demo" (visually dominant)
+✅ Secondary: "View what's inside" (subtle)
+
+PSYCHOLOGICAL EFFECT:
+✅ Viewer should feel: "I'm about to step into the real system."
+✅ NOT: "Here's another feature" or "Here's more information"
+
+FAILURE MODES AVOIDED:
+✅ No excessive text
+✅ No numbers
+✅ Nothing clickable on card
+✅ Nothing that explains
+✅ Nothing that competes with CTA
+
+LITMUS TEST:
+The card is a PORTAL OBJECT that bridges story → system.
+✅ Visual energy restored at transition point.

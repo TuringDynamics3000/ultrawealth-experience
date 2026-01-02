@@ -1,0 +1,33 @@
+How It Works Section - Visual Verification
+==========================================
+
+Date: 2026-01-02
+Branch: feat/how-it-works
+
+VERIFICATION RESULTS:
+---------------------
+✅ Section appears immediately below the WOW Goal Cards Carousel
+✅ Full-width section with white background (strong contrast from carousel's #F9F7F2)
+✅ Centered horizontal flow layout displaying correctly
+
+FLOW STEPS DISPLAYED:
+1. "Money in" - "Your income arrives as usual."
+2. "Goals update" - "Your goals stay on track automatically."
+3. "Portfolio adjusts" - "Everything stays aligned behind the scenes."
+
+VISUAL CHARACTERISTICS:
+- Large, confident typography for step labels
+- Smaller, muted text for descriptions
+- Arrow separators (→) visible between steps on desktop
+- Generous whitespace above and below
+- Clean, calm aesthetic - feels like a "deep breath"
+
+COMPLIANCE WITH SPEC:
+✅ No charts, numbers, or icons implying transactions
+✅ No technical terminology (AI, algorithms, optimization, etc.)
+✅ Plain language, declarative tone
+✅ No promises or urgency
+✅ One sentence per step
+✅ Semantic HTML with aria-label
+
+The section successfully communicates: "I don't need to manage this. It just stays on track."
