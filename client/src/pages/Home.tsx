@@ -46,7 +46,7 @@ export default function Home() {
         {/* The "Phone Frame" Overlay */}
         <div className="flex-grow relative flex justify-center items-end pb-8 md:pb-12">
           {/* The White Border Frame */}
-          <div className="relative w-full max-w-md h-[60vh] md:h-[65vh] border border-white/40 rounded-[2.5rem] backdrop-blur-[2px] flex flex-col items-center justify-end pb-8 overflow-hidden shadow-2xl ring-1 ring-white/20">
+          <div className="relative w-full max-w-md h-[60vh] md:h-[65vh] border border-white/40 rounded-[2.5rem] flex flex-col items-center justify-end pb-8 overflow-hidden shadow-2xl ring-1 ring-white/20">
             
             {/* Center UI Group - Positioned absolutely to sit over torso */}
             <div className="absolute top-1/2 left-0 right-0 flex flex-col items-center gap-4 transform translate-y-4">
