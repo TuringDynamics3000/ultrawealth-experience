@@ -5,6 +5,7 @@ import { useLocation } from "wouter";
 import { WowGoalCardsCarousel } from "@/components/WowGoalCardsCarousel";
 import { WOW_GOAL_CARDS } from "@/data/wowCards.data";
 import { HowItWorksFlow } from "@/components/HowItWorksFlow";
+import { WowTransitionGate } from "@/components/WowTransitionGate";
 
 const GOALS = [
   {
@@ -143,6 +144,11 @@ export default function Home() {
       {/* How It Works Section */}
       <section aria-label="How UltraWealth works">
         <HowItWorksFlow />
+      </section>
+
+      {/* Transition Gate Section */}
+      <section aria-label="Explore the demo">
+        <WowTransitionGate />
       </section>
     </div>
   );
