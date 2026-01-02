@@ -286,7 +286,7 @@ export default function InstitutionalGravityDiagram() {
         fontSize="12"
         fontWeight="400"
       >
-        Once institutional proof accumulates, exit requires re-proving history. Nobody escapes this.
+        Once institutional proof accumulates, exit requires re-proving history. At this point, exit ceases to be a rational option.
       </text>
     </svg>
   );

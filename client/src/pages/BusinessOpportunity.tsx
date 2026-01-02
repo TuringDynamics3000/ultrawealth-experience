@@ -38,7 +38,7 @@ export default function BusinessOpportunity() {
         {/* HEADLINE & SUBLINE — calm, confident, final */}
         <div className="space-y-3">
           <h1 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
-            From Product Revenue to Infrastructure Rent
+            From Software Revenue to Institutional Rent
           </h1>
           <p className="text-white/40 text-lg max-w-3xl">
             UltraWealth is a wedge tenant. The kernel extracts rent across every regulated product that requires deterministic proof.
@@ -135,7 +135,7 @@ export default function BusinessOpportunity() {
           <p className="text-white/60 text-base">
             TuringOS becomes the default system of record for regulated decisions. 
             Exiting requires re-proving institutional history. 
-            <span className="text-white/80 font-medium"> If this is true, nobody escapes this.</span>
+            <span className="text-white/80 font-medium"> At this point, exit ceases to be a rational option.</span>
           </p>
         </div>
 
