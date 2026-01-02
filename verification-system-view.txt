@@ -1,0 +1,55 @@
+TuringOS System View - Verification Notes
+==========================================
+
+Date: 2026-01-02
+URL: https://3001-i2e3z4h69mptfm8w4vhb6-fac96065.sg1.manus.computer/demo
+
+ZONE 1 - SYSTEM STATUS ✓
+- System: TuringOS
+- Status: System running (green)
+- Evaluation: Policies enforced
+- Timestamp: Last evaluated moments ago
+
+ZONE 2 - INTENT → POLICY COMPILATION ✓
+- Intent panel: Goal "Home Deposit", Timeframe "2026"
+- Compiled Policy panel with 4 items:
+  - Capital preservation bias
+  - Liquidity floor enforced
+  - Drawdown band constrained
+  - Rebalance thresholds defined
+
+ZONE 3 - LEDGER & STATE INVARIANTS ✓
+- Ledger Model: Event-sourced, Dual-entry enforced
+- Currency Structure: Base Currency AUD, Sub-ledgers AUD/USD/EUR
+- State Invariants (green dots):
+  - No orphan value
+  - Conservation enforced
+  - Reconciled state only
+- Event: Contribution recorded · Currency: USD · Normalised: AUD
+
+ZONE 4 - PROOF, REPLAY & EVIDENCE ✓
+- Decision Trace panel
+- Decision: Automatic rebalance
+- Policy: Home Deposit Policy
+- State Before: Hash: a91c…
+- State After: Hash: f02b…
+- Outcome: Recorded (green)
+- Replay: Replayable
+- Export Evidence Pack button
+
+VISUAL LANGUAGE ✓
+- Dark background (#0a0c10)
+- System typography (mono for labels)
+- Structured panels with subtle borders
+- No lifestyle imagery
+- No consumer UI metaphors
+- Immediate tone shift from landing page
+
+SPEC COMPLIANCE ✓
+- Read-only presentation surface
+- No side navigation, tabs, or menus
+- No buttons/toggles in status panels
+- No balances, FX rates, or wallet UI
+- No portfolio selection or asset tickers
+- No performance charts or returns
+- Single action: Export Evidence Pack (regulatory feel)
