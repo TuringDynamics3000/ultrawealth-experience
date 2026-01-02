@@ -1,40 +1,38 @@
-# UltraWealth Design Brainstorming (Revised)
+# UltraWealth Design Brainstorming (Corrected Revision)
 
 <response>
 <text>
 <idea>
-  **Design Movement**: **Immersive Realism (Revolut Style)**
+  **Design Movement**: **Revolut Replica (Face-First Layout)**
   
   **Core Principles**:
-  1. **Hero as Canvas**: The image is not a component; it is the environment. The UI lives *inside* the image.
-  2. **Bold Typography**: Headlines are massive, white, and interact with the sky/negative space of the image.
-  3. **Floating Glass/White UI**: Functional elements (cards, buttons) are stark white or frosted glass to pop against the rich background.
-  4. **Unapologetic Modernity**: No "soft" beige backgrounds. Full bleed, high contrast.
+  1. **Face is Sacred**: The subject's face is the emotional anchor. NO UI elements shall obscure it.
+  2. **Torso UI**: The "Big Number" and "Pill" sit strictly below the chin line, overlaying the clothing/chest.
+  3. **The Frame**: A thin, rounded white border frames the subject, but the top edge is high enough to clear the head or cuts through the forehead if zoomed in (Revolut style often crops tight, but we will keep it safe).
+  4. **Top-Heavy Text**: Headline sits above the frame entirely.
 
   **Color Philosophy**:
-  - **Primary**: **White (#FFFFFF)** - For all primary text and UI cards against the image.
-  - **Secondary**: **Sky Blue (from image)** - The background blends into the image.
-  - **Accent**: **Oxidised Bronze (#6F6A63)** - STRICTLY for text *inside* the white cards to maintain the "private bank" feel within the modern shell.
-  - **Intent**: To feel expansive, limitless, and incredibly premium.
+  - **Primary**: **White (#FFFFFF)** - For the frame, the text, the pills.
+  - **Secondary**: **Deep Sky Blue** - The background.
+  - **Accent**: **Oxidised Bronze (#6F6A63)** - Used ONLY for the text inside the white "notification" card at the bottom.
 
-  **Layout Paradigm**: **Vertical Integration**.
-  - Top: Massive headline in the sky.
-  - Middle: The subject (woman) anchors the center.
-  - Bottom/Overlay: The Goal Card floats over the subject or at the bottom, anchoring the concept of "wealth" to the "person".
+  **Layout Paradigm**: **The Portrait Overlay**.
+  - **Layer 1 (Back)**: Full screen sky + woman.
+  - **Layer 2 (Middle)**: A large, thin white border (rounded rectangle) centered on the woman.
+  - **Layer 3 (Front)**: 
+    - Top (Outside Frame): Headline.
+    - Center (Inside Frame, Below Chin): "Goal Value" ($81,600) + "Home Deposit" Pill.
+    - Bottom (Inside Frame): "Status" Notification Card.
 
   **Signature Elements**:
-  1. **Glass/White Pills**: Buttons and tags are fully rounded pills.
-  2. **Depth Layers**: Text -> Image -> Card. A clear Z-index hierarchy.
-  3. **Transparency**: The nav bar is transparent; the content flows behind it.
-
-  **Interaction Philosophy**: **Fluid & Direct**.
-  - Parallax scrolling.
-  - Cards slide up over the image on scroll.
+  1. **The Border**: A 1px white/transparent border with large border-radius.
+  2. **The Center Pill**: A white button saying "Home Deposit" (replacing "Accounts").
+  3. **The Bottom Toast**: A white card showing "+$5,100" or similar progress.
 
   **Typography System**:
-  - **Headlines**: **Inter** (Bold/Display) - Switched from Fraunces to match the Revolut "clean & bold" aesthetic.
-  - **Body**: **Inter** - Clean, legible.
+  - **Headlines**: **Inter** (Bold) - Clean, standard, impactful.
+  - **Numbers**: **Inter** (Bold) - For the big dollar amount.
 </idea>
 </text>
-<probability>0.95</probability>
+<probability>1.0</probability>
 </response>
