@@ -1,0 +1,57 @@
+WOW Transition Gate (Revised) - Visual Verification
+====================================================
+
+Date: 2026-01-02
+Branch: feat/how-it-works
+
+REVISION PURPOSE:
+-----------------
+Restore WOW visual impact at the transition point where energy was dropping.
+Added a Demo Preview Card as a visual anchor - a portal from story to proof.
+
+VERIFICATION RESULTS:
+---------------------
+✅ Three-layer structure implemented correctly:
+
+Layer 1 - Pause Layer:
+✅ White space separation from "How It Works" section
+✅ Signals "something important comes next"
+
+Layer 2 - Anchor Object (Demo Preview Card):
+✅ Card-based with rounded corners (32px radius)
+✅ Subtle shadow/elevation (shadow-2xl)
+✅ Muted architectural background (dark blue gradient)
+✅ Premium, intentional feel
+✅ Clickable - routes to /demo
+✅ Hover effect (-translate-y-2)
+
+Card Content (Symbolic, not informative):
+✅ "PRIMARY GOAL" label
+✅ "On track" status
+✅ "Target 2029" neutral target
+✅ "Updated moments ago" system hint with clock icon
+✅ NO numbers, amounts, charts, accounts, or transactions
+
+Layer 3 - Decision Layer:
+✅ Heading: "Now see it work"
+✅ Supporting line: "A short walkthrough, then the underlying artifacts."
+✅ Primary CTA: "See the demo" (dark, prominent)
+✅ Secondary link: "View what's inside" (subtle)
+
+VISUAL CHARACTERISTICS:
+- Card visually consistent with Goal Cards Carousel language
+- Feels like "you are about to enter the system"
+- Visually escalates from previous section
+- Feels intentional, not polite
+- Feels like a threshold is being crossed
+
+COMPLIANCE WITH SPEC:
+✅ No screenshots, feature lists, or technical diagrams
+✅ No portfolio selection or wallet metaphors
+✅ No AI language or technical jargon
+✅ Does not preview or embed demo content
+✅ Card is symbolic, not informative
+
+LITMUS TEST:
+After seeing this section, the viewer should think: "Okay. Show me the proof."
+✅ The revised section achieves this intent with visual escalation.

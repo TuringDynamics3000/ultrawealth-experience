@@ -1,0 +1,44 @@
+WOW Transition Gate Section - Visual Verification
+=================================================
+
+Date: 2026-01-02
+Branch: feat/how-it-works
+
+VERIFICATION RESULTS:
+---------------------
+✅ Section appears immediately below the "How It Works" section
+✅ Full-width section with neutral/light background (#F9F7F2)
+✅ Clear visual separation from the white "How It Works" section above
+✅ Centered content with generous vertical spacing
+✅ Section feels like a "pause", not a continuation
+
+CONTENT DISPLAYED:
+- Heading: "See it in action"
+- Supporting line: "A short walkthrough, then the underlying artifacts."
+- Primary button: "See the demo" (dark, prominent)
+- Secondary link: "View what's inside" (subtle, underlined)
+
+VISUAL CHARACTERISTICS:
+- Large, calm heading typography
+- Muted supporting text
+- Primary button is dominant visual action (dark background, rounded)
+- Secondary action is visually subordinate (text link with underline)
+- No hype, no urgency, no technical words
+
+COMPLIANCE WITH SPEC:
+✅ No feature lists, charts, metrics, or AI claims
+✅ No portfolio selection or account language
+✅ No screenshots or demo previews
+✅ Two clear paths: primary (demo) and secondary (evidence)
+✅ Semantic HTML with aria-label for accessibility
+✅ Keyboard accessible buttons
+
+INVESTOR LITMUS TEST:
+After seeing this section, the investor should think: "Okay. Show me the proof."
+✅ The section achieves this intent.
+
+WOW FLOW COMPLETE:
+1. Hero: "I want this." ✅
+2. Carousel: "This feels real." ✅
+3. How It Works: "This makes sense." ✅
+4. Transition Gate: "Prove it." ✅
