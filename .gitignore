@@ -1,0 +1,13 @@
+
+# --- Build artefacts ---
+dist/
+
+# --- Dependencies ---
+node_modules/
+
+# --- Environment ---
+.env
+.env.*
+
+# --- Package manager enforcement ---
+package-lock.json
