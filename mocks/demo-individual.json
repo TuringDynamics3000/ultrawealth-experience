@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "id": "demo-individual-001",
+    "name": "Alex Morgan",
+    "age": 34,
+    "residency": "Australia",
+    "employment": "Full-time",
+    "incomeFrequency": "Monthly",
+    "description": "An Australian professional who wants structure and clarity around long-term goals without tracking markets or making frequent financial decisions."
+  },
+
+  "income": {
+    "label": "Primary income",
+    "amountCents": 850000,
+    "frequency": "Monthly"
+  },
+
+  "goals": [
+    {
+      "id": "goal-emergency",
+      "name": "Emergency Fund",
+      "purpose": "Short-term resilience",
+      "targetYear": 2026,
+      "progressPercent": 72,
+      "status": "On track"
+    },
+    {
+      "id": "goal-home",
+      "name": "Home Deposit",
+      "purpose": "First home purchase",
+      "targetYear": 2029,
+      "progressPercent": 41,
+      "status": "On track"
+    },
+    {
+      "id": "goal-retirement",
+      "name": "Retirement",
+      "purpose": "Long-term financial security",
+      "targetYear": 2056,
+      "progressPercent": 28,
+      "status": "Behind"
+    },
+    {
+      "id": "goal-flex",
+      "name": "Lifestyle Buffer",
+      "purpose": "Flexibility for travel and life changes",
+      "targetYear": 2027,
+      "progressPercent": 55,
+      "status": "On track"
+    }
+  ],
+
+  "activity": [
+    {
+      "type": "Income allocated",
+      "detail": "Across 4 goals",
+      "timestamp": "Today, 09:12"
+    },
+    {
+      "type": "Automatic rebalance completed",
+      "detail": "Goal allocations unchanged",
+      "timestamp": "Yesterday, 18:40"
+    },
+    {
+      "type": "Contribution recorded",
+      "detail": "Home Deposit",
+      "timestamp": "Last week"
+    }
+  ]
+}
