@@ -4,5 +4,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "vite": "^7.3.0"
   }
 }
